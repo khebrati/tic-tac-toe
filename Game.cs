@@ -12,28 +12,30 @@ namespace tic_tac_toe{
     }
     public void Start()
     {
-        WriteLine(Board);
         while(!IsEqual() && !User.HasWon('X') && !Bot.HasWon('O'))
         {
-            StartOneRound();
+                Bot.Play();
+                WriteLine(Board);
+                if (!Bot.HasWon('O'))
+                {
+                    User.Play();
+                }
         }
         if(User.HasWon('X'))
             {
+                WriteLine(Board);
                 WriteLine("You won!");
             }
         else if(Bot.HasWon('O'))
             {
+                WriteLine(Board);
                 WriteLine("You failed");
             }
             else
             {
+                WriteLine(Board);
                 WriteLine("Equal!");
             }
-    }
-    public void StartOneRound()
-    {
-        Bot.Play();
-        User.Play();
     }
     public bool IsEqual()
     {

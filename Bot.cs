@@ -12,6 +12,7 @@ namespace tic_tac_toe{
                 if (Game.Board[row,col] == ' ')
                 {
                     Game.Board[row, col] = 'O';
+                    break;
                 }
             }
         }
