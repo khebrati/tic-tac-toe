@@ -3,7 +3,7 @@ using static System.Convert;
 namespace tic_tac_toe
 {
     internal class PlayGround {
-        static void main(string[] args)
+        static void Main(string[] args)
         {
             WriteLine("welcome!");
             WriteLine("what do you want to do?");
@@ -20,17 +20,17 @@ namespace tic_tac_toe
     }
     internal class Bot : Player { }
     internal class User : Player { }
+    internal class Board {
+        public char[,] elements { get; set; }
+        public char this[char c0,char c1] { get { return elements[c0,c1]; } set { elements[c0,c1] = value; } }
+        
+    }
     internal class Game
     {
-        private char[,] board;
-        private User user;
-        private Bot bot;
-        public Game(char[,] board)
-        {
-            this.board = board;
-        }
-        public Game() {
-            this.board = new char[3,3] ;
-        }
+        public Board board { get; set; }
+        public User user { get; set; }
+        public Bot bot { get; set; }
+        
+        
     }
 }
